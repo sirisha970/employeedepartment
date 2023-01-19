@@ -1,0 +1,11 @@
+CREATE TABLE department (
+  depid INTEGER PRIMARY KEY,
+  depname TEXT NOT NULL,
+  deploc TEXT NOT NULL
+);
+
+INSERT INTO department VALUES (0001, 'sales', 'Hyderabad');
+INSERT INTO department VALUES (0002, 'Banking', 'Bangalore');
+INSERT INTO department VALUES (0003, 'HR', 'Pune');
+
+SELECT * FROM department;

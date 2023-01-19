@@ -1,0 +1,13 @@
+CREATE TABLE employee (
+  empid INTEGER PRIMARY KEY,
+  empname TEXT NOT NULL,
+  empsal FLOAT NOT NULL,
+  empdob VARCHAR(20) NOT NULL,
+  emploc TEXT NOT NULL
+);
+
+INSERT INTO employee VALUES (0001, 'siri', '30680', '12-1-1993', 'Hyderabad');
+INSERT INTO employee VALUES (0002, 'santhi', '34500', '09-2-1994', 'Bangalore');
+INSERT INTO employee VALUES (0003, 'Hari', '40050', '19-10-1998', 'Pune');
+
+SELECT * FROM employee;

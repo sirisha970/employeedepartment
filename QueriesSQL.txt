@@ -1,0 +1,76 @@
+a.display all employees whose salary is in the range of 20000 and 45000
+
+CREATE TABLE employee (
+  empid INTEGER PRIMARY KEY,
+  empname TEXT NOT NULL,
+  empsal FLOAT NOT NULL,
+  empdob VARCHAR(20) NOT NULL,
+  emploc TEXT NOT NULL
+);
+
+INSERT INTO employee VALUES (0001, 'siri', '30680', '12-1-1993', 'Hyderabad');
+INSERT INTO employee VALUES (0002, 'santhi', '34500', '09-2-1994', 'Bangalore');
+INSERT INTO employee VALUES (0003, 'Hari', '40050', '19-10-1998', 'Pune');
+
+SELECT * FROM employee WHERE empsal BETWEEN 20000 AND 45000;
+------------------------------------------------------------------------------------------------------
+b.display all employees whose name starts with "T"
+
+CREATE TABLE employee (
+  empid INTEGER PRIMARY KEY,
+  empname TEXT NOT NULL,
+  empsal FLOAT NOT NULL,
+  empdob VARCHAR(20) NOT NULL,
+  emploc TEXT NOT NULL
+);
+
+INSERT INTO employee VALUES (0001, 'siri', '30680', '12-1-1993', 'Hyderabad');
+INSERT INTO employee VALUES (0002, 'santhi', '34500', '09-2-1994', 'Bangalore');
+INSERT INTO employee VALUES (0003, 'Teja', '40050', '19-10-1998', 'Pune');
+
+SELECT * FROM employee WHERE empname LIKE 'T%'
+
+------------------------------------------------------------------------------------------------------
+c.display all  departments ,whose location is "Chennai"
+CREATE TABLE department (
+  depid INTEGER PRIMARY KEY,
+  depname TEXT NOT NULL,
+  deploc TEXT NOT NULL
+);
+
+INSERT INTO department VALUES (0001, 'sales', 'Hyderabad');
+INSERT INTO department VALUES (0002, 'Banking', 'Bangalore');
+INSERT INTO department VALUES (0003, 'HR', 'Chennai');
+
+SELECT * FROM department WHERE deploc = 'Chennai';
+------------------------------------------------------------------------------------------------------
+d.filter the department whose department loc in "Chennai","hyderabad"
+
+CREATE TABLE department (
+  depid INTEGER PRIMARY KEY,
+  depname TEXT NOT NULL,
+  deploc TEXT NOT NULL
+);
+
+INSERT INTO department VALUES (0001, 'sales', 'Hyderabad');
+INSERT INTO department VALUES (0002, 'Banking', 'Bangalore');
+INSERT INTO department VALUES (0003, 'HR', 'Pune');
+
+SELECT * FROM department WHERE deploc = 'Chennai' OR deploc = 'Hyderabad';
+------------------------------------------------------------------------------------------------------
+e.filter the employees whose emploc not in "Chennai","hyderabad"
+
+CREATE TABLE employee (
+  empid INTEGER PRIMARY KEY,
+  empname TEXT NOT NULL,
+  empsal FLOAT NOT NULL,
+  empdob VARCHAR(20) NOT NULL,
+  emploc TEXT NOT NULL
+);
+
+INSERT INTO employee VALUES (0001, 'siri', '30680', '12-1-1993', 'Hyderabad');
+INSERT INTO employee VALUES (0002, 'santhi', '34500', '09-2-1994', 'Bangalore');
+INSERT INTO employee VALUES (0003, 'Hari', '40050', '19-10-1998', 'Pune');
+
+SELECT * FROM employee WHERE NOT emploc = 'Hyderabad' AND NOT emploc = 'Chennai';
+
